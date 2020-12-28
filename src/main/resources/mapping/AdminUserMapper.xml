@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.cykj.mapper.AdminUserMapper">
+  <resultMap id="BaseResultMap" type="com.cykj.entity.AdminUser">
+    <id column="adminid" jdbcType="INTEGER" property="adminid" />
+    <result column="adminname" jdbcType="VARCHAR" property="adminname" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+  </resultMap>
+
+    <select id="selectUser" parameterType="AdminUser" resultType="AdminUser">
+    select * from adminuser where account=#{account} and pwd=#{pwd};
+</select>
+
+</mapper>
